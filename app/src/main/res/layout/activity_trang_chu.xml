@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vietvan.tracnghiemflag.TrangChuActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constrain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bgthu"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/btnBatdau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/ez"
+            android:text="Bắt đầu"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tc_tieude" />
+
+        <Button
+            android:id="@+id/btnChonchedo"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ez"
+            android:text="Chọn chế độ"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBatdau" />
+
+        <Button
+            android:id="@+id/btnDiemcao"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ez"
+            android:text="Điểm cao"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnChonchedo" />
+
+        <Button
+            android:id="@+id/btnHuongdan"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ez"
+            android:text="Hướng dẫn"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDiemcao" />
+
+        <Button
+            android:id="@+id/btnThoat"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ez"
+            android:text="Thoát"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnHuongdan" />
+
+        <TextView
+            android:id="@+id/tv_tc_tieude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Trắc Nghiệm \n FLAG"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/relative"
+        android:background="#e78879"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_centerInParent="true"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:indicatorName="BallPulseIndicator"
+            />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
