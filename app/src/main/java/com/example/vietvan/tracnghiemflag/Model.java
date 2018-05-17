@@ -22,15 +22,19 @@ public class Model {
 
     public static String TAG = "TAG";
 
+    // load font cho textview
     public static void loadfont(Context context, TextView view, String path){
         Typeface type = Typeface.createFromAsset(context.getAssets(), path);
         view.setTypeface(type);
     }
+
+    // load font cho button
     public static void loadfontButton(Context context, Button view, String path){
         Typeface type = Typeface.createFromAsset(context.getAssets(), path);
         view.setTypeface(type);
     }
 
+    // Lấy dữ liệu data với chế độ Dễ
     public static List<FlagResponse> getListLevel1(List<FlagResponse> list){
         List<FlagResponse> flagResponseList = new ArrayList<>();
 
@@ -42,6 +46,7 @@ public class Model {
         return flagResponseList;
     }
 
+    // Lấy dữ liệu data với chế độ Trung Bình
     public static List<FlagResponse> getListLevel2(List<FlagResponse> list){
         List<FlagResponse> flagResponseList = new ArrayList<>();
 
@@ -54,6 +59,7 @@ public class Model {
         return flagResponseList;
     }
 
+    // Lấy dữ liệu data với chế độ Khó
     public static List<FlagResponse> getListLevel3(List<FlagResponse> list){
         List<FlagResponse> flagResponseList = new ArrayList<>();
 
@@ -65,6 +71,7 @@ public class Model {
         return flagResponseList;
     }
 
+    // Load dữ liệu các nước đứng đầu dân số và diện tích
     public static List<FlagResponse> getListCountryTop(List<FlagResponse> list){
 
         Collections.sort(list, new Comparator<FlagResponse>() {
@@ -77,10 +84,7 @@ public class Model {
         return list.subList(0, 100);
     }
 
-    public static List<FlagResponse> test(List<FlagResponse> list){
-        return list.subList(0, 3);
-    }
-
+    // Load dữ liệu các nước ở khu vục Asean
     public static List<FlagResponse> getListCountryinAsean(List<FlagResponse> list){
 
         List<FlagResponse> flagResponseList = new ArrayList<>();
@@ -92,6 +96,7 @@ public class Model {
         return flagResponseList;
     }
 
+    // Load dữ liệu các nước ở khu vục Europe
     public static List<FlagResponse> getListCountryinEurope(List<FlagResponse> list){
         List<FlagResponse> flagResponseList = new ArrayList<>();
 
@@ -109,6 +114,7 @@ public class Model {
         return flagResponseList.subList(10, 50);
     }
 
+    // Load dữ liệu các nước ở khu vục Americas
     public static List<FlagResponse> getListCountryinAmerica(List<FlagResponse> list){
         List<FlagResponse> flagResponseList = new ArrayList<>();
 
@@ -126,6 +132,7 @@ public class Model {
         return flagResponseList.subList(20, 50);
     }
 
+    // Load dữ liệu các nước ở Nam Á và Trung Á
     public static List<FlagResponse> getListCountryinSouthxAsia(List<FlagResponse> list){
         List<FlagResponse> flagResponseList = new ArrayList<>();
 
@@ -136,6 +143,7 @@ public class Model {
         return flagResponseList;
     }
 
+    // Load dữ liệu các nước ở Châu Âu
     public static List<FlagResponse> getListCountryinAfrica(List<FlagResponse> list){
         List<FlagResponse> flagResponseList = new ArrayList<>();
 
@@ -146,6 +154,7 @@ public class Model {
         return flagResponseList;
     }
 
+    // Load dữ liệu các nước siêu nhỏ ỏ Europe
     public static List<FlagResponse> getListCountrySuperSmallinEurope(List<FlagResponse> list){
         List<FlagResponse> flagResponseList = new ArrayList<>();
 
@@ -164,6 +173,7 @@ public class Model {
         return flagResponseList.subList(0, 50);
     }
 
+    // Lấy dữ liệu câu trả lời dạng chữ
     public static List<String> getAnswerWord(List<FlagResponse> list, int pos){
         HashSet<String> hashSet = new HashSet<>();
         hashSet.add(list.get(pos).getName());
@@ -175,6 +185,7 @@ public class Model {
         return new ArrayList<>(hashSet);
     }
 
+    // Lấy dữ liệu câu trả lời dạng ảnh
     public static List<Bitmap> getAnswerImage(List<FlagResponse> list, int pos){
         HashSet<Bitmap> hashSet = new HashSet<>();
         hashSet.add(list.get(pos).getFlag());

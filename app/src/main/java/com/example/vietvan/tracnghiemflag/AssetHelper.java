@@ -8,6 +8,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
  * Created by VietVan on 16/05/2018.
  */
 
+// Tạo CSDL với DATABASE_NAME và VERSION
 public class AssetHelper extends SQLiteAssetHelper{
 
     public static final String DATABASE_NAME = "flag.db";

@@ -61,6 +61,7 @@ public class ManHinh2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_man_hinh2);
         ButterKnife.bind(this);
 
+        // Lấy thông tin chế độ chơi gán vào list
         if (TrangChuActivity.loai2 == 1) {
             list = Model.getListLevel1(TrangChuActivity.flagResponseList);
         } else if (TrangChuActivity.loai2 == 2) {
@@ -69,19 +70,21 @@ public class ManHinh2Activity extends AppCompatActivity {
             list = Model.getListLevel3(TrangChuActivity.flagResponseList);
         }
 
+        // Đảo list
         Collections.shuffle(list);
-        Log.d(TAG, "onCreate: " + list.size() + "/");
 
         loadData(position);
         point = 0;
         position = 1;
 
+        // load font
         Model.loadfont(this, tvTenquocgia, "UTM Aurora.ttf");
 
         prepareMusic();
 
     }
 
+    // Tải dữ liệu tương ứng vị trí pos
     public void loadData(int pos) {
         if (pos > max) {
             loadThongBao();
@@ -105,6 +108,7 @@ public class ManHinh2Activity extends AppCompatActivity {
 
     }
 
+    // load dữ liệu bản thông báo
     public void loadThongBao() {
         View v = LayoutInflater.from(this).inflate(R.layout.thongbao, null);
         TextView diem = v.findViewById(R.id.tv_tb_diem);
@@ -121,6 +125,7 @@ public class ManHinh2Activity extends AppCompatActivity {
 
         diem.setText(point + "");
 
+        // Tạo dialog
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(v);
@@ -159,6 +164,7 @@ public class ManHinh2Activity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences("SCORE", MODE_PRIVATE);
                 int p = sharedPreferences.getInt("point", -1);
 
+                // Kiểm tra điều kiện point
                 if(p != -1){
 
                     if(point >= p){
@@ -190,6 +196,7 @@ public class ManHinh2Activity extends AppCompatActivity {
 
     }
 
+    // load sẵn nhạc
     public void prepareMusic(){
 
         mediaPlayerRight = MediaPlayer.create(this, R.raw.right);
@@ -198,6 +205,7 @@ public class ManHinh2Activity extends AppCompatActivity {
 
     }
 
+    // Bật nhạc
     public void loadMusic(boolean is){
 
         if(is){
@@ -243,6 +251,7 @@ public class ManHinh2Activity extends AppCompatActivity {
         }
     }
 
+    // Xử lý thao tác click button
     public void xuly(int pos){
         if(!isClick){
 
@@ -259,6 +268,7 @@ public class ManHinh2Activity extends AppCompatActivity {
         }
     }
 
+    // Xử lý với điểm
     public void loadDiem(){
         switch (TrangChuActivity.loai2){
             case 1:

@@ -15,6 +15,7 @@ import static com.example.vietvan.tracnghiemflag.FlagDbSchema.FlagTable;
  * Created by VietVan on 16/05/2018.
  */
 
+// Thao tác với db
 public class DatabaseManager {
 
     private static final String TAG = "TAG";
@@ -23,6 +24,7 @@ public class DatabaseManager {
     private static DatabaseManager db;
     private Context context;
 
+    // single tons
     public static DatabaseManager newInstance(Context context){
         if(db == null)
             db = new DatabaseManager(context);
@@ -30,6 +32,7 @@ public class DatabaseManager {
         return db;
     }
 
+    // Hàm khởi tọa với tham số context
     public DatabaseManager(Context context){
         this.context = context;
         assetHelper = new AssetHelper(context);
@@ -37,6 +40,7 @@ public class DatabaseManager {
         sqLiteDatabase = assetHelper.getWritableDatabase();
     }
 
+    // Hàm lấy tất cả bản ghi trong db
     public List<FlagResponse> getListFlag(){
 
         Cursor cursor = sqLiteDatabase.rawQuery("select * from " + FlagTable.NAME, null);

@@ -55,8 +55,10 @@ public class TrangChuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_trang_chu);
         ButterKnife.bind(this);
 
+        // Lấy dữ liệu từ db
         getList();
 
+        // load font
         Model.loadfont(this, tvTcTieude, "SnackerComic_PerosnalUseOnly.ttf");
         Model.loadfontButton(this, btnBatdau, "UTM Amerika Sans.ttf");
         Model.loadfontButton(this, btnChonchedo, "UTM Amerika Sans.ttf");
@@ -68,6 +70,7 @@ public class TrangChuActivity extends AppCompatActivity {
 
     }
 
+    // load nhạc
     private void prepareMusic() {
         mediaPlayer = MediaPlayer.create(this, R.raw.start);
     }
@@ -103,6 +106,7 @@ public class TrangChuActivity extends AppCompatActivity {
                 startActivity(new Intent(TrangChuActivity.this, HuongDanActivity.class));
                 break;
             case R.id.btnThoat:
+                // load thông báo
                 View v = LayoutInflater.from(this).inflate(R.layout.thongbao_thoat, null);
                 ImageView chapnhan = v.findViewById(R.id.btn_chapnhan);
                 ImageView huy = v.findViewById(R.id.btn_huy);
@@ -134,6 +138,7 @@ public class TrangChuActivity extends AppCompatActivity {
         }
     }
 
+    // Lấy list từ db
     private void getList() {
         flagResponseList = new ArrayList<>();
 
@@ -141,16 +146,6 @@ public class TrangChuActivity extends AppCompatActivity {
 
         flagResponseList.addAll(db.getListFlag());
 
-    }
-
-    public void load(boolean is) {
-        if (is) {
-            relative.setVisibility(View.INVISIBLE);
-            constrain.setVisibility(View.VISIBLE);
-        } else {
-            relative.setVisibility(View.VISIBLE);
-            constrain.setVisibility(View.INVISIBLE);
-        }
     }
 
 }

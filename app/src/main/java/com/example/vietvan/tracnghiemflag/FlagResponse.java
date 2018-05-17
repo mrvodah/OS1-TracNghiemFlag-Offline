@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
  * Created by VietVan on 16/05/2018.
  */
 
+// Flag Model
 public class FlagResponse {
 
     public int area;

@@ -50,6 +50,7 @@ public class ChonCheDoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chon_che_do);
         ButterKnife.bind(this);
 
+        // Lấy thông tin sharepreferences
         SharedPreferences sharedPreferences = getSharedPreferences("STORE", MODE_PRIVATE);
         rgLoai1.check(R.id.rb_l1_hinhanh);
         rgLoai2.check(R.id.rb_l2_de);
@@ -57,6 +58,7 @@ public class ChonCheDoActivity extends AppCompatActivity {
         int l1 = sharedPreferences.getInt(loai1, 0);
         int l2 = sharedPreferences.getInt(loai2, 0);
 
+        // Kiểm tra thông tin
         switch (l1){
             case 1:
                 rgLoai1.check(R.id.rb_l1_hinhanh);
@@ -66,6 +68,7 @@ public class ChonCheDoActivity extends AppCompatActivity {
                 break;
         }
 
+        // Kiểm tra thông tin
         switch (l2){
             case 1:
                 rgLoai2.check(R.id.rb_l2_de);
@@ -82,6 +85,7 @@ public class ChonCheDoActivity extends AppCompatActivity {
 
     }
 
+    // Lưu thông tin đã chọn
     @OnClick(R.id.btn_luulai)
     public void onViewClicked() {
 

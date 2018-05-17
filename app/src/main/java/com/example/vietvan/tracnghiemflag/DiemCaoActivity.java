@@ -30,6 +30,7 @@ public class DiemCaoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_diem_cao);
         ButterKnife.bind(this);
 
+        // Lấy thông tin sharepreferences
         SharedPreferences sharedPreferences = getSharedPreferences("SCORE", MODE_PRIVATE);
         String t = sharedPreferences.getString("time", "");
         if(t != "")
@@ -38,6 +39,7 @@ public class DiemCaoActivity extends AppCompatActivity {
         if(p != -1 && t != "")
             tvDiem2.setText(p + "");
 
+        // Load font
         Model.loadfont(this, tvDcTieude, "UTM Aurora.ttf");
         Model.loadfont(this, tvDiem2, "UTM Amerika Sans.ttf");
 

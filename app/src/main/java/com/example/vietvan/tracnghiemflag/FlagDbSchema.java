@@ -4,6 +4,7 @@ package com.example.vietvan.tracnghiemflag;
  * Created by VietVan on 16/05/2018.
  */
 
+// Thông tin db
 public class FlagDbSchema {
 
     public static final class FlagTable{
